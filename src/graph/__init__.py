@@ -1,2 +1,2 @@
-from graph import Graph
-from graph_algo import *
+from .graph import Graph
+from .graph_algo import *
