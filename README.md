@@ -14,7 +14,7 @@ It includes many basic graph algorithm like:
 `! pip install git+git://github.com/brianbt/Graph.git`
 ### Usages
 ```
-import graph
+from graph import Graph
 from graph import graph_algo
 import numpy as np
 

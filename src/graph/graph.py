@@ -1,5 +1,5 @@
 import numpy as np
-
+import warnings
 class Graph:
     """
     A graph class implemented by adjacent list using dict of list.
@@ -8,7 +8,7 @@ class Graph:
         size (int): number of nodes in the graph
     
     Usages:
-        import graph
+        from graph import Graph
         from graph import graph_algo
         import numpy as np
 
@@ -169,7 +169,7 @@ class Graph:
         [v1, v2, v3, ...], v_i come before v_{i+1}
         """
         if self.is_cyclic():
-            print("WARNING: this graph maybe cyclic (unless existing self-loop).\nTopological sort has no meaning")
+            warnings.warn("WARNING: this graph maybe cyclic (unless existing self-loop).\nTopological sort has no meaning")
         visited = [False]*self.size
         stack = []
         for i in range(self.size):
