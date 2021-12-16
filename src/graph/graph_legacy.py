@@ -1,12 +1,14 @@
 import numpy as np
 import pprint as pp
 from queue import PriorityQueue
+import warnings
 
 # Adjacency Matrix representation in Python
 class Graph(object):
 
     # Initialize the matrix
     def __init__(self, size):
+        warnings.warn("graph_leacy.py is deprecated; graph.py instead", warnings.DeprecationWarning)
         self.adjMatrix = np.ones((size,size))*np.inf
         self.size = size
     def resize(self, size):
@@ -416,25 +418,25 @@ def a_star(graph, true_dist, start, end):
     return p,d
 
 
-g = Graph(5)
-g.add_Dedge(0, 1)
-g.add_Dedge(0, 2, 10)
-g.add_Dedge(1, 2)
-g.add_Dedge(2, 3)
-g.add_Dedge(2, 4, 3)
-g.add_Dedge(3, 4)
-print(g)
-print(g.get_adj_vertices(0))
-print(BFS(g, 0, unweight=True))
-print(DFS(g, 0, unweight=True))
-print(DFS_recursive(g, 0))
-print(get_order(g, 0, 2, "bellmanFord"))
-true_dist = [[0,1,10,11,12],[np.inf,0,1,2,3],[np.inf,np.inf,0,1,2],[np.inf,np.inf,np.inf,0,1],[np.inf,np.inf,np.inf,np.inf,0]]
-a_star_d = a_star(g, true_dist, 0, 4)
-print(a_star_d)
-print(bellman_ford(g)[0])
-print(g.topological_sort())
-print(g.get_entries())
+# g = Graph(5)
+# g.add_Dedge(0, 1)
+# g.add_Dedge(0, 2, 10)
+# g.add_Dedge(1, 2)
+# g.add_Dedge(2, 3)
+# g.add_Dedge(2, 4, 3)
+# g.add_Dedge(3, 4)
+# print(g)
+# print(g.get_adj_vertices(0))
+# print(BFS(g, 0, unweight=True))
+# print(DFS(g, 0, unweight=True))
+# print(DFS_recursive(g, 0))
+# print(get_order(g, 0, 2, "bellmanFord"))
+# true_dist = [[0,1,10,11,12],[np.inf,0,1,2,3],[np.inf,np.inf,0,1,2],[np.inf,np.inf,np.inf,0,1],[np.inf,np.inf,np.inf,np.inf,0]]
+# a_star_d = a_star(g, true_dist, 0, 4)
+# print(a_star_d)
+# print(bellman_ford(g)[0])
+# print(g.topological_sort())
+# print(g.get_entries())
 
 # g = Graph(4)
 # print(g)
