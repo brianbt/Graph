@@ -8,8 +8,8 @@ class Graph:
         size (int): number of nodes in the graph
     
     Usages:
-        from graph import Graph
-        import graph_algo
+        import graph
+        from graph import graph_algo
         import numpy as np
 
         # Construct Graph

@@ -9,10 +9,13 @@ It includes many basic graph algorithm like:
  - Bellman-Ford
  - A-star
 
+
+### Install
+`! pip install git+git://github.com/brianbt/Graph.git`
 ### Usages
 ```
-from graph import Graph
-import graph_algo
+import graph
+from graph import graph_algo
 import numpy as np
 
 # Construct Graph
