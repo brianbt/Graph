@@ -13,6 +13,7 @@ Graph Class
 ------------------
 
 .. automodule:: graph.graph
+   :imported-members:
    :members:
    :undoc-members:
    :show-inheritance:
@@ -21,6 +22,7 @@ graph\_algo
 ------------------------
 
 .. automodule:: graph.graph_algo
+   :imported-members:
    :members:
    :undoc-members:
    :show-inheritance:
