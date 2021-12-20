@@ -71,8 +71,6 @@ class Graph:
     |    print(g.get_entries())  
     |    print(graph_algo.get_order(g,0,4))  
     """
-    """
-
     
     def __init__(self, num):
         """Testing
