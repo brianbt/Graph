@@ -179,8 +179,8 @@ def bellman_ford(graph):
     Args:
         graph (Graph): an Graph() object 
 
-    Retruns:
-        tuple(dict of (p), dict of (d)):
+    Retruns:  
+        tuple(dict of (p), dict of (d)):  
         where p[vertiex]=[...]
         p: dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
@@ -211,18 +211,18 @@ def bellman_ford(graph):
 def a_star(graph, true_dist, start, end, get_dict=False):
     """"Using a_star algorithm to find the shortest path from start to end.  
 
-    f(n) = g(n) + h(n). 
-    f(n) is total distance  
-    g(n) is distance taken from start to n  
-    h(n) is the heuristic(est. straight list dist) from n to end  
+    |  f(n) = g(n) + h(n). 
+    |  f(n) is total distance  
+    |  g(n) is distance taken from start to n  
+    |  h(n) is the heuristic(est. straight list dist) from n to end  
 
-    Args:
-        graph (Graph): an Graph() object 
-        true_dist (List[List]): heuristic function, 2d array, true_dist[from][to]
-        start, end (int): vertices
-        get_dict (bool): Return dictionary[vertex:val] if True
+    Args:  
+        graph (Graph): an Graph() object   
+        true_dist (List[List]): heuristic function, 2d array, true_dist[from][to]  
+        start, end (int): vertices  
+        get_dict (bool): Return dictionary[vertex:val] if True  
 
-    Retruns:
+    Retruns:  
         (p,d):
         p: list/dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
