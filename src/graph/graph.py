@@ -14,34 +14,34 @@ class Graph:
     Usages:  
         >>> from graph import Graph  
         >>> from graph import graph_algo  
-        import numpy as np  
+        >>> import numpy as np  
 
-        # Construct Graph  
-        g = Graph(5)  
-        g.add_Dedge(0, 1)  
-        g.add_Dedge(0, 2, 10)  
-        g.add_Dedge(1, 2)  
-        g.add_Dedge(2, 3)  
-        g.add_Dedge(2, 4, 3)  
-        g.add_Dedge(3, 4)  
-        g.add_Dedge(4, 0)  
-        print(g)    # for printing the graph in a neat way  
-        print(g.get_adj_vertices(0))    #get all vertices directly reachable from node 0  
+        >>> # Construct Graph  
+        >>> g = Graph(5)  
+        >>> g.add_Dedge(0, 1)  
+        >>> g.add_Dedge(0, 2, 10)  
+        >>> g.add_Dedge(1, 2)  
+        >>> g.add_Dedge(2, 3)  
+        >>> g.add_Dedge(2, 4, 3)  
+        >>> g.add_Dedge(3, 4)  
+        >>> g.add_Dedge(4, 0)  
+        >>> print(g)    # for printing the graph in a neat way  
+        >>> print(g.get_adj_vertices(0))    #get all vertices directly reachable from node 0  
 
-        # Graph Traversal  
-        print(graph_algo.BFS(g, 0, unweight=True))  
-        print(graph_algo.DFS(g, 0, unweight=True))  
-        print(graph_algo.DFS_recursive(g, 0))  
-        print(graph_algo.get_order(g, 0, 2, "bellmanFord"))  
+        >>> # Graph Traversal  
+        >>> print(graph_algo.BFS(g, 0, unweight=True))  
+        >>> print(graph_algo.DFS(g, 0, unweight=True))  
+        >>> print(graph_algo.DFS_recursive(g, 0))  
+        >>> print(graph_algo.get_order(g, 0, 2, "bellmanFord"))  
 
-        # Shortest Path  
-        true_dist = [[0,1,10,11,12],[np.inf,0,1,2,3],[np.inf,np.inf,0,1,2],[np.inf,np.inf,np.inf,0,1],[np.inf,np.inf,np.inf,np.inf,0]]  
-        a_star_d = graph_algo.a_star(g, true_dist, 0, 4)  
-        print(a_star_d)  
-        print(graph_algo.bellman_ford(g))  
-        print(g.topological_sort())  
-        print(g.get_entries())  
-        print(graph_algo.get_order(g,0,4))  
+        >>> # Shortest Path  
+        >>> true_dist = [[0,1,10,11,12],[np.inf,0,1,2,3],[np.inf,np.inf,0,1,2],[np.inf,np.inf,np.inf,0,1],[np.inf,np.inf,np.inf,np.inf,0]]  
+        >>> a_star_d = graph_algo.a_star(g, true_dist, 0, 4)  
+        >>> print(a_star_d)  
+        >>> print(graph_algo.bellman_ford(g))  
+        >>> print(g.topological_sort())  
+        >>> print(g.get_entries())  
+        >>> print(graph_algo.get_order(g,0,4))  
     """
     
     def __init__(self, num):
@@ -102,8 +102,8 @@ class Graph:
 
         Args:
             v1, v2: vertex (int)
-            all (bool): if False -> remove the first added edge from v1 to v2
-                        if True -> remove all edge from v1 to v2
+            all (bool): |  if False -> remove the first added edge from v1 to v2
+                        |  if True -> remove all edge from v1 to v2
         """
         if all:
             self.graph[v1] = [x for x in self.graph[v1] if x[0] != v2]
@@ -136,8 +136,8 @@ class Graph:
         
         Args:
             v1, v2: vertex (int)
-            all (bool): if True -> return all weight if multi edge on two node
-                        else -> return the first edge's weight
+            all (bool): |  if True -> return all weight if multi edge on two node
+                        |  else -> return the first edge's weight
 
         Returns:
             edge from v1 to v2, v1 and v2 need to be adjacent node, else return np.inf
@@ -210,7 +210,7 @@ class Graph:
         return False
 
     def get_entries(self, hasPath=False):
-        """ Return list of vertices that is the entry point. Vertices that no one point to.
+        """Return list of vertices that is the entry point. Vertices that no one point to.
 
         Args:
             hasPath: If True -> only the vertices that are in a path will be return

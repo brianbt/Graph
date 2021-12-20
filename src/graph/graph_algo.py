@@ -180,8 +180,7 @@ def bellman_ford(graph):
         graph (Graph): an Graph() object 
 
     Returns:  
-        tuple(dict of (p), dict of (d)):  
-        where p[vertiex]=[...]
+        tuple(dict of (p), dict of (d)) where p[vertiex]=[...]:  
         p: dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
         d: dict of distance, d[i] means the distance needed from s to i
