@@ -1,4 +1,5 @@
 # Graph  
+[![Documentation Status](https://readthedocs.org/projects/graph-brianbt/badge/?version=latest)](https://graph-brianbt.readthedocs.io/en/latest/?badge=latest)  
 This is a python library for graph (data structure and algorithm) operations.  
 Support both directed and undirected graph.  Implement by Adjacent List.  
 It includes many basic graph algorithm like:
