@@ -111,8 +111,8 @@ class Graph:
                 del self.graph[v1][i]
 
     def get_adj_vertices(self, v, self_loop=True):
-        """
-        Return list of vertices that is one step reachable from v.
+        """Return list of vertices that is one step reachable from v.
+
         Args:
             v (int): vertex
             self_loop (bool): if True -> include self vertex, else -> Exclude
@@ -126,14 +126,15 @@ class Graph:
             return []
 
     def get_edge_weight(self, v1, v2, all=False):
-        """
-        Return all edge weight from v1 to v2. 
+        """Return all edge weight from v1 to v2. 
+
         This function DOES NOT search the path. Thus, 1 and v2 need to be Adjcent.  
         
         Args:
             v1, v2: vertex (int)
             all (bool): if True -> return all weight if multi edge on two node
                         else -> return the first edge's weight
+
         Returns:
             edge from v1 to v2, v1 and v2 need to be adjacent node, else return np.inf
         """
@@ -165,10 +166,10 @@ class Graph:
         stack.append(v)
 
     def topological_sort(self):
-        """
-        Perform Topological Sort on the graph. 
-        Return Topological List.
-        [v1, v2, v3, ...], v_i come before v_{i+1}
+        """Perform Topological Sort on the graph. 
+
+        Returns:
+          Topological List. For example: [v1, v2, v3, ...] where v_i come before v_{i+1}
         """
         if self.is_cyclic():
             warnings.warn("WARNING: this graph maybe cyclic (unless existing self-loop).\nTopological sort has no meaning")
@@ -194,8 +195,7 @@ class Graph:
         return False
 
     def is_cyclic(self):
-        """
-        Check if the graph has cycle, return (bool). ONLY for directed graph
+        """Check if the graph has cycle, return (bool). ONLY for directed graph
         """
         visited = [False] * (self.size + 1)
         recStack = [False] * (self.size + 1)
@@ -206,8 +206,8 @@ class Graph:
         return False
 
     def get_entries(self, hasPath=False):
-        """
-        Return list of vertices that is the entry point. Vertices that no one point to.
+        """ Return list of vertices that is the entry point. Vertices that no one point to.
+
         Args:
             hasPath: If True -> only the vertices that are in a path will be return
         """
@@ -230,8 +230,8 @@ class Graph:
 
 
     def get_dests(self, hasPath=False):
-        """
-        Return list of vertices that is the destination. Vertices that point to nothing.
+        """Return list of vertices that is the destination. Vertices that point to nothing.
+
         Args:
             hasPath: If True -> only the vertices that are in a path will be return
         """
@@ -243,16 +243,16 @@ class Graph:
             return list(set(combined).union(set(havePath)))
 
     def get_isolated(self):
-        """
-        Return list of vertices that is both entries and destination.
+        """Return list of vertices that is both entries and destination.
         """
         return list(set(self.get_dests()).intersection(set(self.get_entries())))
 
     # Print the graph
     def print_graph(self, store=False):
         """
-        format: Vertex u: -> (v1, w1) -> (v2, w2) -> (v3, w3)
-        Arg store is internal use
+        format: 
+            Vertex u: -> (v1, w1) -> (v2, w2) -> (v3, w3)  
+            Arg store is internal use
         """
         if store:
             output = ""

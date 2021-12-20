@@ -3,18 +3,18 @@ from queue import PriorityQueue
 
 def BFS(graph, s, unweight=False, get_dict=False):
     '''
-    Start from s, travel through entire graph, using BFS.
+    Start from s, travel through entire graph, using BFS.  
 
-    Args:
-        unweight (bool): Assume the graph is unweighted (weight=1) if True.
-        get_dict (bool): Return dictionary[vertex:val] if True
+    Args:  
+        unweight (bool): Assume the graph is unweighted (weight=1) if True.  
+        get_dict (bool): Return dictionary[vertex:val] if True  
 
     Returns: 
-        (p,d)
-        p: list/dict of parent_node, p[i] means the parent of vertex i
-           -1 means the parent of s, -2 means not reachable
-        d: list/dict of distance, d[i] means the distance needed from s to i
-           Yield shortest path if unweight=True.
+        (p,d):
+        p: list/dict of parent_node, p[i] means the parent of vertex i  
+           -1 means the parent of s, -2 means not reachable  
+        d: list/dict of distance, d[i] means the distance needed from s to i  
+           Yield shortest path if unweight=True.  
     '''
     visited = [False for _ in range(len(graph))]
     p = [-2 for _ in range(len(graph))]
@@ -220,7 +220,7 @@ def a_star(graph, true_dist, start, end, get_dict=False):
         true_dist (List[List]): heuristic function, 2d array, true_dist[from][to]
         start, end (int): vertices
         get_dict (bool): Return dictionary[vertex:val] if True
-        
+
     Retruns:
         (p,d)
         p: list/dict of parent_node, p[i] means the parent of vertex i
