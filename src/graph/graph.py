@@ -53,8 +53,7 @@ class Graph:
         """add edge from v1 to v2 and v2 to v1
     
         Args:
-            v1 (int): vertex
-            v2 (int): vertex
+            v1, v2 (int): vertex
             w (float): weight of edge. Defaults=1
         
         """
@@ -69,8 +68,7 @@ class Graph:
         add edge from v1 to v2, one direction only
 
         Args:
-            v1 (int): vertex
-            v2 (int): vertex
+            v1, v2 (int): vertex 
             w: weight of edge. Defaults=1
         """
         if v1 >= self.size or v2 >= self.size:
@@ -88,7 +86,7 @@ class Graph:
         Remove edge from v1 to v2 and v2 to v1.
 
         Args:
-            v1, v2: vertex (int)
+            v1, v2 (int): vertex 
             all (bool): |  if False -> remove the first added edge from v1 to v2
                         |  if True -> remove all edge from v1 to v2
         """
@@ -101,7 +99,7 @@ class Graph:
         Remove edge from v1 to v2, one direction only
 
         Args:
-            v1, v2: vertex (int)
+            v1, v2 (int): vertex 
             all (bool): |  if False -> remove the first added edge from v1 to v2
                         |  if True -> remove all edge from v1 to v2
         """
@@ -120,6 +118,9 @@ class Graph:
         Args:
             v (int): vertex
             self_loop (bool): if True -> include self vertex, else -> Exclude
+        
+        Returns:
+            list
         """
         if v in self.graph:
             if self_loop:
@@ -135,7 +136,7 @@ class Graph:
         This function DOES NOT search the path. Thus, 1 and v2 need to be Adjcent.  
         
         Args:
-            v1, v2: vertex (int)
+            v1, v2 (int): vertex 
             all (bool): |  if True -> return all weight if multi edge on two node
                         |  else -> return the first edge's weight
 
@@ -173,7 +174,9 @@ class Graph:
         """Perform Topological Sort on the graph. 
 
         Returns:
-          Topological List. For example: [v1, v2, v3, ...] where v_i come before v_{i+1}
+          list:
+          Topological List. For example, [v1, v2, v3, ...] where v_i come before v_{i+1}
+
         """
         if self.is_cyclic():
             warnings.warn("WARNING: this graph maybe cyclic (unless existing self-loop).\nTopological sort has no meaning")
@@ -200,6 +203,9 @@ class Graph:
 
     def is_cyclic(self):
         """Check if the graph has cycle, return (bool). ONLY for directed graph
+        
+        Returns:
+            bool
         """
         visited = [False] * (self.size + 1)
         recStack = [False] * (self.size + 1)
@@ -213,7 +219,10 @@ class Graph:
         """Return list of vertices that is the entry point. Vertices that no one point to.
 
         Args:
-            hasPath: If True -> only the vertices that are in a path will be return
+            hasPath (bool): If True -> only the vertices that are in a path will be return
+        
+        Returns:
+            list
         """
         out = []
         topo = self.topological_sort()
@@ -237,7 +246,10 @@ class Graph:
         """Return list of vertices that is the destination. Vertices that point to nothing.
 
         Args:
-            hasPath: If True -> only the vertices that are in a path will be return
+            hasPath (bool): If True -> only the vertices that are in a path will be return
+        
+        Returns:
+            list
         """
         combined = [x for x in self.graph if not self.get_adj_vertices(x, self_loop=False) or not self.graph[x]]
         havePath = [x for x in self.graph if not self.get_adj_vertices(x)]
@@ -247,7 +259,9 @@ class Graph:
             return list(set(combined).union(set(havePath)))
 
     def get_isolated(self):
-        """Return list of vertices that is both entries and destination.
+        """
+        Returns: 
+            list of vertices that is both entries and destination.
         """
         return list(set(self.get_dests()).intersection(set(self.get_entries())))
 
@@ -255,8 +269,8 @@ class Graph:
     def print_graph(self, store=False):
         """
         format: 
-            Vertex u: -> (v1, w1) -> (v2, w2) -> (v3, w3)  
-            Arg store is internal use
+            |  Vertex u: -> (v1, w1) -> (v2, w2) -> (v3, w3)  
+            |  Arg `store` is for internal use
         """
         if store:
             output = ""
@@ -271,7 +285,9 @@ class Graph:
             print(self, end="")
         
     def get_graph(self):
-        """get self.graph
+        """
+        Returns:
+            self.graph
         """
         return self.graph
 

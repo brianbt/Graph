@@ -11,10 +11,12 @@ def BFS(graph, s, unweight=False, get_dict=False):
 
     Returns: 
         (p,d):
-        p: list/dict of parent_node, p[i] means the parent of vertex i  
-           -1 means the parent of s, -2 means not reachable  
-        d: list/dict of distance, d[i] means the distance needed from s to i  
-           Yield shortest path if unweight=True.  
+        p: list/dict of parent_node  
+          |  p[i] means the parent of vertex i  
+          |  -1 means the parent of s, -2 means not reachable  
+        d: list/dict of distance  
+          |  d[i] means the distance needed from s to i  
+          |  Yield shortest path if unweight=True.  
     '''
     visited = [False for _ in range(len(graph))]
     p = [-2 for _ in range(len(graph))]
@@ -52,10 +54,12 @@ def DFS(graph, s, unweight=False, get_dict=False):
 
     Returns: 
         (p,d):
-        p: list/dict of parent_node, p[i] means the parent of vertex i
-           -1 means the parent of s, -2 means not reachable
-        d: list/dict of distance, d[i] means the distance needed from s to i
-           NOT necessarily yield shortest path if unweight=True
+        p: list/dict of parent_node  
+          |  p[i] means the parent of vertex i  
+          |  -1 means the parent of s, -2 means not reachable  
+        d: list/dict of distance  
+          |  d[i] means the distance needed from s to i  
+          |  NOT necessarily yield shortest path if unweight=True
     '''
     visited = [False for _ in range(len(graph))]
     p = [-2 for _ in range(len(graph))]
@@ -105,10 +109,12 @@ def DFS_recursive(graph, s, unweight=False, get_dict=False):
 
     Returns: 
         (p,d):
-        p: list/dict of parent_node, p[i] means the parent of vertex i
-           -1 means the parent of s, -2 means not reachable
-        d: list/dict of distance, d[i] means the distance needed from s to i
-           NOT necessarily yield shortest path if unweight=True
+        p: list/dict of parent_node  
+          |  p[i] means the parent of vertex i  
+          |  -1 means the parent of s, -2 means not reachable  
+        d: list/dict of distance  
+          |  d[i] means the distance needed from s to i  
+          |  NOT necessarily yield shortest path if unweight=True
     '''
     visited = [False for _ in range(len(graph))]
     p = [-2 for _ in range(len(graph))]
@@ -143,6 +149,7 @@ def get_order(graph, s, u, method="BFS"):
         u (int): ending node
 
     Returns:
+        list:
         path from s to u, if u is unreachable from s -> return []
     '''
     output = []
@@ -181,10 +188,12 @@ def bellman_ford(graph):
 
     Returns:  
         tuple(dict of (p), dict of (d)) where p[vertiex]=[...]:  
-        p: dict of parent_node, p[i] means the parent of vertex i
-           -1 means the parent of s, -2 means not reachable
-        d: dict of distance, d[i] means the distance needed from s to i
-           Shortest path if true_dist(heuristic function) is correct
+        p: dict of parent_node  
+          |  p[i] means the parent of vertex i  
+          |  -1 means the parent of s, -2 means not reachable  
+        d: dict of distance  
+          |  d[i] means the distance needed from s to i  
+          |  Always yield shortest path if no negative cycle. Can detect negative cycle.
     """
     p = {}
     d = {}
@@ -223,10 +232,13 @@ def a_star(graph, true_dist, start, end, get_dict=False):
 
     Returns:  
         (p,d):  
-        p: list/dict of parent_node, p[i] means the parent of vertex i
-           -1 means the parent of s, -2 means not reachable
-        d: list/dict of distance, d[i] means the distance needed from s to i
-           Shortest path if true_dist(heuristic function) is correct
+        p: list/dict of parent_node  
+          |  p[i] means the parent of vertex i  
+          |  -1 means the parent of s, -2 means not reachable  
+        d: list/dict of distance  
+          |  d[i] means the distance needed from s to i  
+          |  Shortest path if `true_dist` (heuristic function) is admissible. 
+          |  Admissible means NEVER oversitmate, h(n)<=ground_truth  
     """
     p = {}
     d = {}      ##without heuristic
