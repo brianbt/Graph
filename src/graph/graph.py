@@ -89,7 +89,7 @@ class Graph:
 
         Args:
             v1, v2: vertex (int)
-            all (bool): if False -> remove the first added edge from v1 to v2
+            all (bool): |  if False -> remove the first added edge from v1 to v2
                         |  if True -> remove all edge from v1 to v2
         """
         self.remove_Dedge(v1, v2, all)

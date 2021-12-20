@@ -1,6 +1,13 @@
 graph package
 =============
 
+Installation
+-----------------
+
+Install with pip
+::
+
+     pip install -U git+git://github.com/brianbt/Graph.git
 
 Graph Class
 ------------------
