@@ -1,4 +1,4 @@
-Welcome to Graph's documentation This is testing!
+Welcome to Graph's documentation!
 =================================
 
 .. toctree::
