@@ -36,8 +36,7 @@ release = 'latest'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
-              'sphinx_autodoc_typehints', 'sphinxcontrib.napoleon']
+extensions = ['sphinx.ext.autodoc','sphinx.ext.napoleon', 'sphinx_autodoc_typehints']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

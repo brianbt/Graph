@@ -8,6 +8,7 @@ def BFS(graph, s, unweight=False, get_dict=False):
     Args:
         unweight (bool): Assume the graph is unweighted (weight=1) if True.
         get_dict (bool): Return dictionary[vertex:val] if True
+
     Returns: 
         (p,d)
         p: list/dict of parent_node, p[i] means the parent of vertex i
@@ -48,6 +49,7 @@ def DFS(graph, s, unweight=False, get_dict=False):
         s (int): starting vertex
         unweight (bool): Assume the graph is unweighted (weight=1) if True.
         get_dict (bool): Return dictionary[vertex:val] if True
+
     Returns: 
         (p,d)
         p: list/dict of parent_node, p[i] means the parent of vertex i
@@ -100,6 +102,7 @@ def DFS_recursive(graph, s, unweight=False, get_dict=False):
         s (int): starting vertex
         unweight (bool): Assume the graph is unweighted (weight=1) if True.
         get_dict (bool): Return dictionary[vertex:val] if True
+
     Returns: 
         (p,d)
         p: list/dict of parent_node, p[i] means the parent of vertex i
@@ -138,6 +141,7 @@ def get_order(graph, s, u, method="BFS"):
         method (str): either "BFS", "BFS" or "bellmanFord". Return shortest-weight-path if "BellmanFord"
         p (list/dict): parent_node (return from BFS, DFS)
         u (int): ending node
+
     Returns:
         path from s to u, if u is unreachable from s -> return []
     '''
@@ -157,8 +161,8 @@ def get_order(graph, s, u, method="BFS"):
 
 
 def relax(u, v, duv, d, p):
-    '''
-    relax function used in Bellman Ford algorithm
+    '''relax function used in Bellman Ford algorithm
+
     Args:
         u, v (int): vertices
         duv (float): weight(u, v)
@@ -170,11 +174,11 @@ def relax(u, v, duv, d, p):
         p[v] = u
 
 def bellman_ford(graph):
-    """
-    Run Bellman Ford algorithm on the entire graph
+    """Run Bellman Ford algorithm on the entire graph
     
     Args:
         graph (Graph): an Graph() object 
+
     Retruns:
         tuple(dict of (p), dict of (d)), p[vertiex]=[...]
         p: dict of parent_node, p[i] means the parent of vertex i
@@ -204,8 +208,8 @@ def bellman_ford(graph):
 
 
 def a_star(graph, true_dist, start, end, get_dict=False):
-    """"
-    Using a_star algorithm to find the shortest path from start to end.  
+    """"Using a_star algorithm to find the shortest path from start to end.  
+
     f(n) = g(n) + h(n). 
     f(n) is total distance  
     g(n) is distance taken from start to n  
@@ -216,6 +220,7 @@ def a_star(graph, true_dist, start, end, get_dict=False):
         true_dist (List[List]): heuristic function, 2d array, true_dist[from][to]
         start, end (int): vertices
         get_dict (bool): Return dictionary[vertex:val] if True
+        
     Retruns:
         (p,d)
         p: list/dict of parent_node, p[i] means the parent of vertex i
