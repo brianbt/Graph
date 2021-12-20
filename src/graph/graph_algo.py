@@ -51,7 +51,7 @@ def DFS(graph, s, unweight=False, get_dict=False):
         get_dict (bool): Return dictionary[vertex:val] if True
 
     Returns: 
-        (p,d)
+        (p,d):
         p: list/dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
         d: list/dict of distance, d[i] means the distance needed from s to i
@@ -104,7 +104,7 @@ def DFS_recursive(graph, s, unweight=False, get_dict=False):
         get_dict (bool): Return dictionary[vertex:val] if True
 
     Returns: 
-        (p,d)
+        (p,d):
         p: list/dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
         d: list/dict of distance, d[i] means the distance needed from s to i
@@ -180,7 +180,7 @@ def bellman_ford(graph):
         graph (Graph): an Graph() object 
 
     Retruns:
-        tuple(dict of (p), dict of (d)), p[vertiex]=[...]
+        tuple(dict of (p), dict of (d)) where p[vertiex]=[...]:
         p: dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
         d: dict of distance, d[i] means the distance needed from s to i
@@ -222,7 +222,7 @@ def a_star(graph, true_dist, start, end, get_dict=False):
         get_dict (bool): Return dictionary[vertex:val] if True
 
     Retruns:
-        (p,d)
+        (p,d):
         p: list/dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
         d: list/dict of distance, d[i] means the distance needed from s to i

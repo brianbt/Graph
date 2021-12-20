@@ -1,10 +1,8 @@
 graph package
 =============
 
-Submodules
-----------
 
-graph.graph module
+Graph Class
 ------------------
 
 .. automodule:: graph.graph
@@ -12,7 +10,7 @@ graph.graph module
    :undoc-members:
    :show-inheritance:
 
-graph.graph\_algo module
+graph\_algo
 ------------------------
 
 .. automodule:: graph.graph_algo
@@ -20,18 +18,4 @@ graph.graph\_algo module
    :undoc-members:
    :show-inheritance:
 
-graph.graph\_legacy module
---------------------------
 
-.. automodule:: graph.graph_legacy
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: graph
-   :members:
-   :undoc-members:
-   :show-inheritance:

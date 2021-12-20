@@ -4,8 +4,12 @@ class Graph:
     """
     A graph class implemented by adjacent list using dict of list.  
 
+    Args:
+        num (int): number of nodes in the graph  
+
     Instance Attributes:  
-        size (int): number of nodes in the graph  
+        self.size (int): number of nodes in the graph  
+        self.graph (dict): dict of list
 
     Usages:  
         from graph import Graph  
