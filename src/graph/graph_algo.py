@@ -179,7 +179,7 @@ def bellman_ford(graph):
     Args:
         graph (Graph): an Graph() object 
 
-    Retruns:  
+    Returns:  
         tuple(dict of (p), dict of (d)):  
         where p[vertiex]=[...]
         p: dict of parent_node, p[i] means the parent of vertex i
@@ -209,7 +209,7 @@ def bellman_ford(graph):
 
 
 def a_star(graph, true_dist, start, end, get_dict=False):
-    """"Using a_star algorithm to find the shortest path from start to end.  
+    """Using a_star algorithm to find the shortest path from start to end.  
 
     |  f(n) = g(n) + h(n). 
     |  f(n) is total distance  
@@ -222,8 +222,8 @@ def a_star(graph, true_dist, start, end, get_dict=False):
         start, end (int): vertices  
         get_dict (bool): Return dictionary[vertex:val] if True  
 
-    Retruns:  
-        (p,d):
+    Returns:  
+        (p,d):  
         p: list/dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
         d: list/dict of distance, d[i] means the distance needed from s to i

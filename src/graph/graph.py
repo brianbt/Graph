@@ -12,8 +12,8 @@ class Graph:
         self.graph (dict): dict of list
 
     Usages:  
-        from graph import Graph  
-        from graph import graph_algo  
+        >>> from graph import Graph  
+        >>> from graph import graph_algo  
         import numpy as np  
 
         # Construct Graph  
@@ -157,7 +157,7 @@ class Graph:
 
     def get_edges(self):
         """
-        Retruns:
+        Returns:
             list of edge in this graph.
         """
         return [(i, j[0]) for i, v in self.graph.items() for j in v]
@@ -271,6 +271,8 @@ class Graph:
             print(self, end="")
         
     def get_graph(self):
+        """get self.graph
+        """
         return self.graph
 
     def __len__(self):

@@ -86,7 +86,7 @@ class Graph(object):
 
     def get_edges(self):
         """
-        Retruns:
+        Returns:
             list of edge in this graph.
         """
         return [(i, j) for i, l in enumerate(self.adjMatrix) for j, v in enumerate(l) if v]
@@ -349,7 +349,7 @@ def bellman_ford(graph):
     
     Args:
         graph (Graph): an Graph() object 
-    Retruns:
+    Returns:
         dict of (p,d), d[vertiex] = (p,d)
         p: dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
@@ -389,7 +389,7 @@ def a_star(graph, true_dist, start, end):
         graph (Graph): an Graph() object 
         true_dist (List[List]): heuristic function, 2d array, true_dist[from][to]
         start, end (int): vertices
-    Retruns:
+    Returns:
         (p,d)
         p: dict of parent_node, p[i] means the parent of vertex i
            -1 means the parent of s, -2 means not reachable
